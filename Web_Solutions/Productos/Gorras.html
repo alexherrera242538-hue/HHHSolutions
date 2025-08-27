@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HHH Solutions - Inicio</title>
+    <link rel="stylesheet" href="..//Css/Style.css">
+</head>
+<body>
+
+    <button class="toggle" aria-label="Abrir menú" aria-controls="sidebar" aria-expanded="false">
+        ☰ Menú
+    </button>
+
+    <div class="layout">
+        <aside id="sidebar" class="sidebar" aria-label="Navegación principal">
+            <div class="brand" role="banner">
+                <div class="logo">HH</div>
+                <div>
+                    <div class="name">HHHSolutions</div>
+                    <div class="tag">Serigrafía & Sublimación</div>
+                </div>
+            </div>
+
+            <nav role="navigation">
+                <ul class="menu">
+                    <li class="item active">
+                        <a href="..//index.html" aria-current="page">
+                            <span class="icon">🏠</span>
+                            <span class="label">Inicio</span>
+                        </a>
+                    </li>
+
+                    <li class="item">
+                        <a href="..//Nosotros.html">
+                            <span class="icon">👥</span>
+                            <span class="label">Nosotros</span>
+                        </a>
+                    </li>
+
+                    <li class="item">
+                        <button class="accordion" aria-expanded="false" aria-controls="submenu-productos">
+                            <span class="icon">🛍️</span>
+                            <span class="label">Productos</span>
+                            <span class="badge">Nuevo</span>
+                        </button>
+                        <div id="submenu-productos" class="submenu" role="region" aria-label="Submenú Productos">
+                            <div>
+                                <a href="..//Productos/Tazas.html">Tazas sublimadas</a>
+                                <a href="..//Productos/Camisetas.html">Camisetas serigrafía</a>
+                                <a href="..//Productos/Gorras.html">Gorras personalizadas</a>
+                              
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="item">
+                        <a href="..//Contactos.html">
+                            <span class="icon">✉️</span>
+                            <span class="label">Contacto</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div style="margin-top:auto; color:var(--muted); font-size:.9rem; padding:12px">
+                © <span id="year"></span> HHHSolutions
+            </div>
+        </aside>
+        <!-- LISTADO PRODUCTOS FUTBOL-->
+        <div class="contenido">
+            <h1>Gorras Personalizadas </h1>
+            <div class="productos-container">
+                <div class="producto">
+                    <img src="..//img/Gorras/Amor.jpg" alt="Producto 1">
+                    <h2>Gorra Enamorados</h2>
+                    <p>Descripción breve del producto 1.</p>
+                    <p class="precio">$10.00</p>
+                </div>
+                <div class="producto">
+                    <img src="..//img/Gorras/Dragonball.jpg" alt="Producto 2">
+                    <h2>Gorra Dragonball</h2>
+                    <p>Descripción breve del producto 2.</p>
+                    <p class="precio">$10.00</p>
+                </div>
+                <div class="producto">
+                    <img src="..//img/Gorras/Emo.jpg" alt="Producto 3">
+                    <h2>Gorra Emo</h2>
+                    <p>Descripción breve del producto 3.</p>
+                    <p class="precio">$10.00</p>
+                </div>
+                <div class="producto">
+                    <img src="..//img/Gorras/Mario.jpg" alt="Producto 4">
+                    <h2>Gorra Mario</h2>
+                    <p>Descripción breve del producto 4.</p>
+                    <p class="precio">$10.00</p>
+                </div>
+                <div class="producto">
+                    <img src="..//img/Gorras/Suenos.jpg" alt="Producto 5">
+                    <h2>Gorra Personalizada</h2>
+                    <p>Descripción breve del producto 5.</p>
+                    <p class="precio">$10.00</p>
+                </div>
+                <div class="producto">
+                    <img src="..//img/Gorras/Superman.jpg" alt="Producto 6">
+                    <h2>Gorra Superman</h2>
+                    <p>Descripción breve del producto 6.</p>
+                    <p class="precio">$10.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- BOTÓN WHATSAPP -->
+    <a href="https://wa.me/593981614415" target="_blank" class="btn-whatsapp">💬</a>
+
+    <script src="..//Js/script.js"></script>
+
+</body>
+</html>

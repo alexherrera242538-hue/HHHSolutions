@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HHH Solutions - Contacto</title>
+    <link rel="stylesheet" href="..//Css/Style.css">
+</head>
+<body>
+
+    <button class="toggle" aria-label="Abrir menú" aria-controls="sidebar" aria-expanded="false">
+        ☰ Menú
+    </button>
+
+    <div class="layout">
+        <aside id="sidebar" class="sidebar" aria-label="Navegación principal">
+            <div class="brand" role="banner">
+                <div class="logo">HH</div>
+                <div>
+                    <div class="name">HHHSolutions</div>
+                    <div class="tag">Serigrafía & Sublimación</div>
+                </div>
+            </div>
+
+            <nav role="navigation">
+                <ul class="menu">
+                    <li class="item active">
+                        <a href="..//index.html" aria-current="page">
+                            <span class="icon">🏠</span>
+                            <span class="label">Inicio</span>
+                        </a>
+                    </li>
+
+                    <li class="item">
+                        <a href="..//Nosotros.html">
+                            <span class="icon">👥</span>
+                            <span class="label">Nosotros</span>
+                        </a>
+                    </li>
+
+                    <li class="item">
+                        <button class="accordion" aria-expanded="false" aria-controls="submenu-productos">
+                            <span class="icon">🛍️</span>
+                            <span class="label">Productos</span>
+                            <span class="badge">Nuevo</span>
+                        </button>
+                        <div id="submenu-productos" class="submenu" role="region" aria-label="Submenú Productos">
+                            <div>
+                                <a href="..//Productos/Tazas.html">Tazas sublimadas</a>
+                                <a href="..//Productos/Camisetas.html">Camisetas serigrafía</a>
+                                <a href="..//Productos/Gorras.htmll">Gorras personalizadas</a>
+                               
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="item">
+                        <a href="..//Contactos.html">
+                            <span class="icon">✉️</span>
+                            <span class="label">Contacto</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div style="margin-top:auto; color:var(--muted); font-size:.9rem; padding:12px">
+                © <span id="year"></span> 2025 HHHSolutions
+            </div>
+        </aside>
+
+        <div class="contenido">
+            <h1>Contáctanos</h1>
+            <form action="https://formspree.io/f/xqadkgyp" method="POST">
+                <input type="text" name="nombre" placeholder="Tu Nombre" required>
+                <input type="email" name="email" placeholder="Tu Correo" required>
+                <textarea name="mensaje" rows="5" placeholder="Tu Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <a href="https://wa.me/593981614415" target="_blank" class="btn-whatsapp">💬</a>
+        <script src="script.js"></script>
+</body>
+</html>

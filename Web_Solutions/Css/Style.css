@@ -1,0 +1,421 @@
+/* ====== ESTILOS GENERALES ====== */
+:root {
+    --bg: #0f172a; /* fondo sidebar */
+    --bg-hover: #1e293b; /* hover */
+    --text: #e2e8f0; /* texto */
+    --muted: #94a3b8; /* texto tenue */
+    --brand: #22c55e; /* color marca */
+    --active: #10b981; /* acento activo */
+    --shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+
+* {
+    box-sizing: border-box
+}
+/* ====== ESTILOS GENERALES DEL CUERPO ====== */
+body {
+    margin: 0;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+    background: #f6f8fb;
+    color: #0f172a;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center; /* centra horizontal */
+    align-items: center;
+    margin: 0;
+}
+
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.productos-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 20px; /* espacio entre productos */
+    max-width: 1200px;
+    margin: auto;
+    justify-items: center;
+}
+
+.producto {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+    .producto:hover {
+        transform: scale(1.05);
+    }
+
+    .producto img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .producto h2 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .producto p {
+        font-size: 14px;
+        color: #555;
+    }
+
+.precio {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e63946;
+    margin-top: 10px;
+}
+
+/* ====== FIN ESTILOS GENERALES DEL CUERPO ====== */
+
+/* Layout */
+.layout {
+    display: flex;
+    width: 100%
+}
+
+
+
+aside.sidebar {
+    width: 280px;
+    background: var(--bg);
+    color: var(--text);
+    padding: 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    box-shadow: var(--shadow);
+    transition: transform .3s ease;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(34,197,94,.15), rgba(16,185,129,.08));
+    border: 1px solid rgba(34,197,94,.25);
+}
+
+    .brand .logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: var(--brand);
+        display: grid;
+        place-items: center;
+        color: white;
+        font-weight: 800;
+    }
+
+    .brand .name {
+        font-weight: 700;
+        letter-spacing: .3px
+    }
+
+    .brand .tag {
+        font-size: .8rem;
+        color: var(--muted);
+        margin-top: 2px
+    }
+
+.toggle {
+    display: none;
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 50;
+    background: var(--bg);
+    color: var(--text);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 12px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}
+
+nav {
+    margin-top: 8px
+}
+
+
+ul.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px 
+}
+
+.item > a, .item > button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 12px;
+    border-radius: 12px;
+    color: var(--text);
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    text-align: left;
+    list-style: none;
+}
+
+    .item > a:hover, .item > button:hover {
+        background: var(--bg-hover)
+    }
+
+.item .icon {
+    width: 20px;
+    height: 20px;
+    display: inline-grid;
+    place-items: center;
+    opacity: .9
+}
+
+.item.active > a {
+    background: rgba(16,185,129,.18);
+    border: 1px solid rgba(16,185,129,.35)
+}
+
+    .item.active > a .label {
+        color: #ecfeff
+    }
+
+.label {
+    flex: 1
+}
+
+.badge {
+    font-size: .75rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: rgba(34,197,94,.15);
+    color: #bbf7d0
+}
+
+/* Submenú */
+.submenu {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .25s ease;
+    overflow: hidden
+}
+
+    .submenu.open {
+        grid-template-rows: 1fr
+    }
+
+    .submenu > div {
+        min-height: 0
+    }
+
+    .submenu a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-left: 36px;
+        padding: 10px 12px;
+        border-radius: 10px;
+        color: var(--muted);
+        text-decoration: none;
+    }
+
+        .submenu a:hover {
+            background: var(--bg-hover);
+            color: var(--text)
+        }
+
+/* Contenido */
+main.content {
+    flex: 1;
+    padding: 28px;
+    max-width: 1200px;
+    margin: 0 auto
+}
+
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 8px 20px rgba(2,6,23,.08);
+    margin-bottom: 18px;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    aside.sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100svh;
+        transform: translateX(-105%)
+    }
+
+        aside.sidebar.open {
+            transform: translateX(0)
+        }
+
+    .toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px
+    }
+
+    main.content {
+        padding: 80px 18px 24px
+    }
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #1e293b;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+    }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+    .menu-btn {
+        display: flex;
+    }
+}
+
+/* ====== CONTENIDO ====== */
+.contenido {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+/* ====== BOTÓN WHATSAPP ====== */
+.btn-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+    .btn-whatsapp:hover {
+        background: #1ebe5a;
+    }
+
+/* ====== CARRUSEL ====== */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+    .carousel img {
+        width: 100%;
+        display: none;
+    }
+
+        .carousel img.active {
+            display: block;
+        }
+
+    .carousel button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        border: none;
+        color: white;
+        font-size: 24px;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .carousel .prev {
+        left: 10px;
+    }
+
+    .carousel .next {
+        right: 10px;
+    }
+
+/* ====== PRODUCTOS ====== */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.producto {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    background: #f9f9f9;
+}
+
+    .producto img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+/* ====== FORMULARIO ====== */
+form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+    form input, form textarea, form button {
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    form button {
+        background: #1e293b;
+        color: white;
+        cursor: pointer;
+    }
+
+        form button:hover {
+            background: #334155;
+        }
+
+
